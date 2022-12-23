@@ -1,0 +1,5 @@
+**/.env
+
+templates/traefik/config/config.yml
+templates/traefik/config/traefik.yml
+templates/**/deploy.yml
