@@ -16,6 +16,10 @@ envsubst < config/traefik.sample.yml > config/traefik.yml
 export USERPASS=$(echo $(htpasswd -nb admin $PASSWORD_TRAEFIK) | sed -e s/\\$/\\$\\$/g)
 echo $USERPASS
 
+# create config directory on your machine
+mkdir -p ${DATA_LOCATION}/${SERVICE}/config
+cp ./config ${DATA_LOCATION}/${SERVICE}
+
 # compile container
 docker compose config > deploy.yml
 
